@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/logoBackground"
+    android:padding="7sp">
+
+    <ImageView
+        android:id="@+id/topHomeButton"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/launcher_icon_blank"/>
+
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30sp"
+        android:theme="@style/homeActivityText"/>
+
+    <Button
+        android:id="@+id/signOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyologuj się"
+        android:layout_gravity="end"
+        android:layout_marginEnd="12sp"/>
+
+</androidx.appcompat.widget.Toolbar >

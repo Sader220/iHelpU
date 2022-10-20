@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "592226564545",
+    "firebase_url": "https://ihelpu-39001-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ihelpu-39001",
+    "storage_bucket": "ihelpu-39001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592226564545:android:2acc99911ec1fa43ee5740",
+        "android_client_info": {
+          "package_name": "com.example.ihelpu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592226564545-v4fgor5hnh8qtktc2hre4jn1l0ogtasb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ihelpu",
+            "certificate_hash": "7b37f3f44da7f12b0b969e7c2c456b61cdd8c5ce"
+          }
+        },
+        {
+          "client_id": "592226564545-btirv8qq5m9qr09eghobfu0a3aks4hr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ0l4MoErsAcfcytSihObqZ6PGiAKvc-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592226564545-btirv8qq5m9qr09eghobfu0a3aks4hr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
