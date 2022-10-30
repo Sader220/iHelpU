@@ -14,7 +14,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name ="logoBackground">
+    <style name ="supportBackground">
         <item name="android:background">@color/grey</item>
         <item name="android:backgroundTint">@color/darkGrey</item>
     </style>

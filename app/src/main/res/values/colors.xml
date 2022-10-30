@@ -12,4 +12,8 @@
     <color name="lightRed">#FFFF1111</color>
     <color name="lightBlue">#FF5B8FF1</color>
     <color name="blue">#FF4882EF</color>
+    <color name="orange">#FFFF9933</color>
+    <color name="lightOrange">#FFFFB366</color>
+    <color name="purple">#FFCC66FF</color>
+    <color name="lightPurple">#FFDD99FF</color>
 </resources>

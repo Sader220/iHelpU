@@ -1,10 +1,11 @@
-package com.example.ihelpu;
+package com.example.ihelpu.tools.tabs;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -12,9 +13,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.ihelpu.MainActivity;
+import com.example.ihelpu.R;
+import com.example.ihelpu.tools.communication.ReadSignLanguage;
+import com.example.ihelpu.tools.planner.PlannerActivity;
+import com.example.ihelpu.tools.communication.SpeechToTextActivity;
+import com.example.ihelpu.tools.communication.TextToSpeechActivity;
+import com.example.ihelpu.tools.mouse.Mouse1Activity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -23,10 +30,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-    GoogleSignInOptions gso;
     GoogleSignInClient mGoogleSignInClient;
     FirebaseAuth mAuth;
-    TextView no_account, top_text, text_to_speech_text, mouse1_Text, speech_to_text_text;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
+    TextView noAccount, topText;
+    ConstraintLayout mouse1Open, textToSpeechOpen, speechToTextOpen, signLanguageOpen, plannerOpen;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,82 +45,76 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance();
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("login");
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
 
-        ImageButton text_to_speech_button = (ImageButton) myView.findViewById(R.id.textToSpeechButton);
-        text_to_speech_button.setOnClickListener(this);
-        TextView text_to_speech_text = (TextView) myView.findViewById(R.id.textToSpeechText);
-        text_to_speech_text.setOnClickListener(this);
+        mouse1Open = myView.findViewById(R.id.mouse1Open);
+        mouse1Open.setOnClickListener(this);
 
-        ImageButton mouse1_button = (ImageButton) myView.findViewById(R.id.mouse1Button);
-        mouse1_button.setOnClickListener(this);
-        TextView mouse1_Text = (TextView) myView.findViewById(R.id.mouse1Text);
-        mouse1_Text.setOnClickListener(this);
+        textToSpeechOpen = myView.findViewById(R.id.textToSpeechOpen);
+        textToSpeechOpen.setOnClickListener(this);
 
-        ImageButton sign_language_button = (ImageButton) myView.findViewById(R.id.signLanguageButton);
-        sign_language_button.setOnClickListener(this);
-        TextView sign_language_text = (TextView) myView.findViewById(R.id.signLanguageText);
-        sign_language_text.setOnClickListener(this);
+        speechToTextOpen = myView.findViewById(R.id.speechToTextOpen);
+        speechToTextOpen.setOnClickListener(this);
 
-        ImageButton speech_to_text_button = (ImageButton) myView.findViewById(R.id.speechToTextButton);
-        speech_to_text_button.setOnClickListener(this);
-        TextView speech_to_text_text = (TextView) myView.findViewById(R.id.speechToTextText);
-        speech_to_text_text.setOnClickListener(this);
+        signLanguageOpen = myView.findViewById(R.id.signLanguageOpen);
+        signLanguageOpen.setOnClickListener(this);
 
-        Button sign_out = (Button) myView.findViewById(R.id.signOutButton);
+        plannerOpen = myView.findViewById(R.id.plannerOpen);
+        plannerOpen.setOnClickListener(this);
+
+        Button sign_out = myView.findViewById(R.id.signOutButton);
         sign_out.setOnClickListener(this);
 
-        top_text = (TextView) myView.findViewById(R.id.topText);
-        top_text.setText("Narzędzia");
+        topText = myView.findViewById(R.id.topText);
+        topText.setText("Narzędzia");
 
-        no_account = (TextView) myView.findViewById(R.id.noAccount);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("users");
-
+        noAccount = myView.findViewById(R.id.noAccount);
         return myView;
     }
 
+    //Reakcja na przyciski
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.textToSpeechButton:
-            case R.id.textToSpeechText:
+            case R.id.textToSpeechOpen:
                 toTextToSpeech();
                 break;
-            case R.id.mouse1Text:
-            case R.id.mouse1Button:
+            case R.id.mouse1Open:
                 toMouse1Activity();
                 break;
-            case R.id.speechToTextButton:
-            case R.id.speechToTextText:
+            case R.id.speechToTextOpen:
                 toSpeechToTextActivity();
                 break;
             case R.id.signOutButton:
                 logOutUser();
                 break;
-            case R.id.signLanguageButton:
-            case R.id.signLanguageText:
+            case R.id.signLanguageOpen:
                 toReadSignLanguage();
                 break;
-
+            case R.id.plannerOpen:
+                toPlaner();
+                break;
         }
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //Sprawdź czy użytkownik jest zlogowany
         new Handler().postDelayed (new Runnable(){
+            @SuppressLint("SetTextI18n")
             public void run(){
-                if (mAuth.getCurrentUser() == null) {
-                    no_account.setText("Użytkownik nie jest zalogowany!");
-                }
-                else{
-                    no_account.setText("");
+                if (mAuth.getCurrentUser().isAnonymous()) {
+                    noAccount.setText("Użytkownik nie jest zalogowany");
+                } else{
+                    noAccount.setText("");
                 }
             }
         }, 1000);
@@ -136,6 +140,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         startActivity(intent);
     }
 
+    private void toPlaner(){
+        Intent intent = new Intent(getActivity().getApplicationContext(), PlannerActivity.class);
+        startActivity(intent);
+    }
+
     private void toReadSignLanguage(){
         Intent intent = new Intent(getActivity().getApplicationContext(), ReadSignLanguage.class);
         startActivity(intent);
@@ -152,4 +161,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             return;
         }
     }
+
 }

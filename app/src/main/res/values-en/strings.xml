@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">iHelpU</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_friends">AddFriendsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="touchpad">Touchpad</string>
+    <string name="vocalize_text">Vocalize text</string>
+    <string name="recognize_speech">Register speech</string>
+    <string name="sign_language">Sing language</string>
+    <string name="plan">Planner</string>
+    <string name="chooseDate">Select a date</string>
+    <string name="chooseTime">Select the hour</string>
+    <string name="accept">Confirm</string>
+    <string name="logIn">Sign in</string>
+    <string name="logInWithGoogle">Sign in with Google</string>
+    <string name="continueWithoutLogin">Continue without login</string>
+    <string name="signOutText">Sign out</string>
+    <string name="enterTheTitle">Enter the title</string>
+    <string name="enterADescription">Enter a description</string>
+    <string name="email">Enter your e-mail</string>
+    <string name="login">Enter your new login</string>
+    <string name="password">Enter your new password</string>
+    <string name="language">Language: </string>
+    <string name="register">Register</string>
+    <string name="passwordForget">Forgot your password?</string>
+    <string name="passwordReset">Reset your password</string>
+    <string name="clear">Clear</string>
+    <string name="tools">Tools</string>
+    <string name="info">Info</string>
+    <string name="toSpeechText">Type text to speech</string>
+    <string name="title1">Why do people with disabilities need help?</string>
+    <string name="text1">People with disabilities are marginalized. About 5.5 million people with disabilities live in Poland. We tend to translate the physical characteristics of people into their personality traits, this is the so-called "halo effect," such people are treated not mediocre but extremely (idealized or incomprehensible image of a human being). The mental and physical comfort of people with disabilities is reduced compared to the average person, so it is worth helping them. These people feel lonely more often:</string>
+    <string name="graph1">*Graph comparing the assessment of loneliness of a healthy person and a person with a disability.</string>
+    <string name="title2">What is the life of a person with a disability?</string>
+    <string name="text2">Treating a person with a disability as a picture of the disorder is harmful and harmful, and that person is also a human being. These people experience many problems and challenges in their lives that can lead to thoughts of suicide or even depression. According to the studies conducted in 2009–2015, symptoms of depression were noticed in as many as 65% of chronically ill people, but mainly people with acquired disabilities suffer.</string>
+    <string name="graph2">*Graph comparing the assessment of the well-being of a healthy person and a person with a disability in UK, 2018 to 2019.</string>
+    <string name="sources">Sources: \nhttps://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/disability/bulletins/disabilitywellbeingandlonelinessuk/2019 \nhttps://www.aihw.gov.au/reports/australias-health/health-of-people-with-disability \nhttps://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html \nhttps://www.nik.gov.pl/aktualnosci/miejsca-powszechnie-dostepne-wciaz-niedostepne.html</string>
+    <string name="title3">Comfort of life for people with disabilities</string>
+    <string name="text3">City infrastructure is becoming more and more accessible to this social group. The architecture of apartments and buildings, the adaptation of means of transport and public space have the greatest impact on the quality of life of disabled people.</string>
+</resources>

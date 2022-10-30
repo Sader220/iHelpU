@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:theme="@style/logoBackground"
+    android:theme="@style/supportBackground"
     android:padding="7sp">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:id="@+id/signOutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wyologuj się"
+        android:text="@string/signOutText"
         android:layout_gravity="end"
         android:layout_marginEnd="12sp"/>
 

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">iHelpU</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -9,6 +10,38 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="touchpad">Touchpad</string>
+    <string name="vocalize_text">Wokalizacja tekstu</string>
+    <string name="recognize_speech">Rejestrator głosu</string>
+    <string name="sign_language">Język migowy</string>
+    <string name="plan">Planowanie</string>
+    <string name="chooseDate">Wybierz datę</string>
+    <string name="chooseTime">Wybierz godzinę</string>
+    <string name="accept">Potwierdź</string>
+    <string name="logIn">Zaloguj się</string>
+    <string name="logInWithGoogle">Zaloguj się przez Google</string>
+    <string name="continueWithoutLogin">Kontynuuj bez logowania</string>
+    <string name="signOutText">Wyloguj się</string>
+    <string name="enterTheTitle">Wprowadź tytuł</string>
+    <string name="enterADescription">Wprowadź opis</string>
+    <string name="email">Wprowadź adres e-mail</string>
+    <string name="login">Wprowadź nazwę użytkownika</string>
+    <string name="password">Wprowadź hasło</string>
+    <string name="language">Język: </string>
+    <string name="register">Zarejestruj się</string>
+    <string name="passwordForget">Zapomniałeś hasła?</string>
+    <string name="passwordReset">Resetuj hasło</string>
+    <string name="clear">Wyczyść</string>
+    <string name="tools">Narzędzia</string>
+    <string name="info">Informacje</string>
+    <string name="toSpeechText">Wprowadź tekst do wypowiedzenia</string>
+    <string name="title1">Dlaczego osoby z niepełnosprawnościami potrzebują pomocy?</string>
+    <string name="text1">Osoby z niepełnosprawnościami są marginalizowane. W naszym kraju mieszka około 5,5 miliona takich osób. Mamy tendencję do przekładania cech fizycznych ludzi na ich cechy osobowości, jest to tzw. „efekt aureoli”, takie osoby traktowane nie są traktowane zwyczajnie, lecz skrajnie (wyidealizowany lub niezrozumiały obraz człowieka). Komfort psychiczny i fizyczny osób niepełnosprawnych jest obniżony w porównaniu do przeciętnego człowieka, dlatego warto im pomóc. Takie osoby częściej czują się samotne:</string>
+    <string name="graph1">*Wykres porównujący subiektywną ocenę poziomu samotności osoby zdrowej i osoby z niepełnosprawnością.</string>
+    <string name="title2">Jakie jest życie osoby z niepełnosprawnością?</string>
+    <string name="text2">Traktowanie osób z niepełnosprawnościami jako obrazu zaburzenia jest krzywdzące i szkodliwe, a osoba ta jest również człowiekiem. Tacy ludzie doświadczają wielu problemów i wyzwań w swoim życiu, które mogą prowadzić do myśli samobójczych, a nawet depresji. Według badań przeprowadzonych w latach 2009–2015 objawy depresji zaobserwowano aż u 65% osób przewlekle chorych, ale cierpią głównie osoby z niepełnosprawnością nabytą. </string>
+    <string name="graph2">*Wykres porównujący ocenę samopoczucia osoby zdrowej i osoby z niepełnosprawnością w Wielkiej Brytanii w latach 2018-2019.</string>
+    <string name="sources">Źródła: \nhttps://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/disability/bulletins/disabilitywellbeingandlonelinessuk/2019 \nhttps://www.aihw.gov.au/reports/australias-health/health-of-people-with-disability \nhttps://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html \nhttps://www.nik.gov.pl/aktualnosci/miejsca-powszechnie-dostepne-wciaz-niedostepne.html</string>
+    <string name="title3">Komfort życia osób z niepełnosprawnościami</string>
+    <string name="text3">Infrastruktura miejska staje się coraz bardziej przystępna dla tej grupy społecznej. Największy wpływ na jakość życia takich osób ma zaporjekowanie mieszkań i budynków, adaptacja środków transportu i przestrzeni publicznej.</string>
 </resources>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.example.ihelpu.HomeFragment"
+        android:name="com.example.ihelpu.tools.tabs.HomeFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_home">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/PlannerFragment"
-        android:name="com.example.ihelpu.PlannerFragment"
+        android:name="com.example.ihelpu.tools.PlannerFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_planner"/>
 </navigation>

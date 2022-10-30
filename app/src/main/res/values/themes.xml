@@ -13,7 +13,7 @@
         <item name="android:background">@color/white</item>
     </style>
 
-    <style name="logoBackground">
+    <style name="supportBackground">
         <item name="android:background">@color/white</item>
         <item name="android:backgroundTint">@color/green</item>
     </style>

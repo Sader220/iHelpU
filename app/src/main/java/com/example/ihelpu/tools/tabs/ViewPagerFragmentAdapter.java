@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.ihelpu.tools.tabs.HomeFragment;
+import com.example.ihelpu.tools.tabs.InfoFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class ViewPagerFragmentAdapter extends FragmentStateAdapter{
@@ -23,7 +25,7 @@ public class ViewPagerFragmentAdapter extends FragmentStateAdapter{
             case 0:
                 return new HomeFragment();
             case 1:
-                return  new PlannerFragment();
+                return  new InfoFragment();
             default:
                 return new HomeFragment();
         }

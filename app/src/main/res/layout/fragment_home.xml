@@ -5,109 +5,198 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/background">
+
     <include
         layout="@layout/toolbar"
         android:id="@+id/toolBar">
     </include>
 
-    <TextView
-        android:id="@+id/textToSpeechText"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20sp"
-        android:layout_marginStart="100sp"
-        android:background="@drawable/home_text_view"
-        android:backgroundTint="#ff0000"
-        android:text="Wokalizacja tekstu"
-        android:theme="@style/homeActivityText"
-        app:layout_constraintBottom_toBottomOf="@+id/textToSpeechButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@+id/textToSpeechButton"
-        app:layout_constraintTop_toTopOf="@+id/textToSpeechButton"
-        app:layout_constraintVertical_bias="0.50" />
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar"
+        app:flow_verticalAlign="bottom"
+        android:layout_marginTop="100sp">
 
-    <ImageButton
-        android:id="@+id/textToSpeechButton"
-        android:layout_width="90sp"
-        android:layout_height="90sp"
-        android:background="@drawable/image_button"
-        android:backgroundTint="#EF233B"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135"
-        app:srcCompat="@drawable/ic_speaker"
-        tools:ignore="MissingConstraints"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
 
-    <TextView
-        android:id="@+id/mouse1Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20sp"
-        android:layout_marginStart="100sp"
-        android:background="@drawable/home_text_view"
-        android:backgroundTint="@color/lightBlue"
-        android:text="Touchpad"
-        android:theme="@style/homeActivityText"
-        app:layout_constraintBottom_toBottomOf="@+id/mouse1Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/mouse1Button"
-        app:layout_constraintTop_toTopOf="@+id/mouse1Button"
-        app:layout_constraintVertical_bias="0.5" />
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/mouse1Button"
-        android:layout_width="90sp"
-        android:layout_height="90sp"
-        android:background="@drawable/image_button"
-        android:backgroundTint="@color/blue"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textToSpeechButton"
-        app:layout_constraintVertical_bias="0.05"
-        app:srcCompat="@drawable/ic_mouse1"
-        tools:ignore="MissingConstraints" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/mouse1Open">
 
-    <TextView
-        android:id="@+id/speechToTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20sp"
-        android:layout_marginStart="100sp"
-        android:background="@drawable/home_text_view"
-        android:backgroundTint="@color/lightGreen"
-        android:text="Rejestracja głosu"
-        android:theme="@style/homeActivityText"
-        app:layout_constraintBottom_toBottomOf="@+id/speechToTextButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/speechToTextButton"
-        app:layout_constraintTop_toTopOf="@+id/speechToTextButton"
-        app:layout_constraintVertical_bias="0.5" />
+                <TextView
+                    android:id="@+id/mouse1Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="90sp"
+                    android:background="@drawable/home_text_view"
+                    android:backgroundTint="@color/lightOrange"
+                    android:text="@string/touchpad"
+                    android:theme="@style/homeActivityText"
+                    app:layout_constraintBottom_toBottomOf="@+id/mouse1Button"
+                    app:layout_constraintStart_toEndOf="@+id/mouse1Button"
+                    app:layout_constraintTop_toTopOf="@+id/mouse1Button"
+                    tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/speechToTextButton"
-        android:layout_width="90sp"
-        android:layout_height="90sp"
-        android:background="@drawable/image_button"
-        android:backgroundTint="@color/green"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mouse1Button"
-        app:layout_constraintVertical_bias="0.05"
-        app:srcCompat="@drawable/ic_text_to_speech"
-        tools:ignore="MissingConstraints" />
+                <ImageButton
+                    android:id="@+id/mouse1Button"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="@drawable/image_button"
+                    android:backgroundTint="@color/orange"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_mouse1"
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/touchpad" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30sp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textToSpeechOpen">
+
+                <ImageButton
+                    android:id="@+id/textToSpeechButton"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="@drawable/image_button"
+                    android:backgroundTint="#EF233B"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_speaker"
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/vocalize_text" />
+
+                <TextView
+                    android:id="@+id/textToSpeechText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_text_view"
+                    android:backgroundTint="#ff0000"
+                    android:layout_marginStart="90sp"
+                    android:text="@string/vocalize_text"
+                    android:theme="@style/homeActivityText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textToSpeechButton"
+                    app:layout_constraintTop_toTopOf="@+id/textToSpeechButton" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30sp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/speechToTextOpen">
+
+                <TextView
+                    android:id="@+id/speechToTextText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_text_view"
+                    android:backgroundTint="@color/lightGreen"
+                    android:text="@string/recognize_speech"
+                    android:layout_marginStart="90sp"
+                    android:theme="@style/homeActivityText"
+                    app:layout_constraintBottom_toBottomOf="@+id/speechToTextButton"
+                    app:layout_constraintTop_toTopOf="@+id/speechToTextButton"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <ImageButton
+                    android:id="@+id/speechToTextButton"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="@drawable/image_button"
+                    android:backgroundTint="@color/green"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_text_to_speech"
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/recognize_speech" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30sp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/signLanguageOpen">
+
+                <ImageButton
+                    android:id="@+id/signLanguageButton"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="@drawable/image_button"
+                    android:backgroundTint="@color/blue"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_sign_language"
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/sign_language" />
+
+                <TextView
+                    android:id="@+id/signLanguageText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_text_view"
+                    android:backgroundTint="@color/lightBlue"
+                    android:text="@string/sign_language"
+                    android:layout_marginStart="90sp"
+                    android:theme="@style/homeActivityText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/signLanguageButton"
+                    tools:layout_editor_absoluteX="100dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30sp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/plannerOpen">
+
+                <ImageButton
+                    android:id="@+id/plannerButton"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="@drawable/image_button"
+                    android:backgroundTint="@color/purple"
+                    android:scaleType="fitXY"
+                    android:padding="16sp"
+                    app:srcCompat="@drawable/ic_calendar"
+                    tools:ignore="MissingConstraints"
+                    android:contentDescription="@string/plan" />
+
+                <TextView
+                    android:id="@+id/plannerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_text_view"
+                    android:backgroundTint="@color/lightPurple"
+                    android:text="@string/plan"
+                    android:layout_marginStart="90sp"
+                    android:theme="@style/homeActivityText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/plannerButton"
+                    tools:layout_editor_absoluteX="100dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <TextView
         android:id="@+id/noAccount"
@@ -121,38 +210,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
-    <TextView
-        android:id="@+id/signLanguageText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100sp"
-        android:layout_marginEnd="20sp"
-        android:background="@drawable/home_text_view"
-        android:backgroundTint="@color/grey"
-        android:text="Język migowy"
-        android:theme="@style/homeActivityText"
-        app:layout_constraintBottom_toBottomOf="@+id/signLanguageButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@+id/signLanguageButton"
-        app:layout_constraintTop_toTopOf="@+id/signLanguageButton"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <ImageButton
-        android:id="@+id/signLanguageButton"
-        android:layout_width="90sp"
-        android:layout_height="90sp"
-        android:background="@drawable/image_button"
-        android:backgroundTint="@color/darkGrey"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speechToTextButton"
-        app:layout_constraintVertical_bias="0.05"
-        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

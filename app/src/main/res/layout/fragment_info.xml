@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tools.tabs.InfoFragment"
+    android:theme="@style/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="100sp"
+            android:layout_marginEnd="20sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:padding="5sp"
+                android:text="@string/title1"
+                android:textSize="25sp"
+                android:theme="@style/supportBackground" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text1"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/graph"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="20sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/graph1"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                android:layout_marginBottom="20sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:padding="5sp"
+                android:text="@string/title2"
+                android:textSize="25sp"
+                android:theme="@style/supportBackground"
+                android:layout_marginTop="40sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text2"
+                android:textSize="18sp"
+                android:layout_marginBottom="30sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/graph_mental_health"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/graph2"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
+                android:layout_marginBottom="40sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:padding="5sp"
+                android:text="@string/title3"
+                android:textSize="25sp"
+                android:theme="@style/supportBackground" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text3"
+                android:textSize="18sp"
+                android:layout_marginBottom="30sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/sources"
+                android:textSize="14sp"
+                tools:ignore="SmallSp"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="150sp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/include3"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+
+
+</FrameLayout>

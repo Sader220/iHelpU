@@ -7,7 +7,7 @@
     android:layout_height="320sp"
     android:background="@drawable/bg_wavy_background"
     tools:ignore="MissingConstraints"
-    android:theme="@style/logoBackground"
+    android:theme="@style/supportBackground"
     android:orientation="vertical">
 
 <TextView
@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="30sp"
-    android:text="iHelpU"
+    android:text="@string/app_name"
     android:textColor="#FFFFFF"
     android:textSize="100sp"
     app:fontFamily="sans-serif-thin"

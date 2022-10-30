@@ -1,28 +1,21 @@
-package com.example.ihelpu;
+package com.example.ihelpu.tools.tabs;
 
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.ihelpu.R;
+import com.example.ihelpu.ViewPagerFragmentAdapter;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 
 public class TabsActivity extends AppCompatActivity {
     ViewPagerFragmentAdapter viewPagerFragmentAdapter;
-    TabLayout tab_Layout;
+    TabLayout tabLayout;
     ViewPager2 view_Pager2;
 
     @Override
@@ -30,13 +23,12 @@ public class TabsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs);
 
-        tab_Layout = findViewById(R.id.tabLayout);
+        tabLayout = findViewById(R.id.tabLayout);
         view_Pager2 = findViewById(R.id.viewPager);
         viewPagerFragmentAdapter = new ViewPagerFragmentAdapter(this);
         view_Pager2.setAdapter(viewPagerFragmentAdapter);
 
-
-        tab_Layout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 view_Pager2.setCurrentItem(tab.getPosition());
@@ -57,7 +49,7 @@ public class TabsActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                tab_Layout.getTabAt(position).select();
+                tabLayout.getTabAt(position).select();
             }
         });
 

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-feature android:name="android.hardware.camera.any" />
 
     <queries>
@@ -24,35 +25,49 @@
         android:theme="@style/Theme.IHelpU"
         tools:targetApi="31">
         <activity
-            android:name=".ReadSignLanguage"
+            android:name=".tools.communication.ReadSignLanguage"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PasswordReset"
+            android:name=".tools.planner.AddPlanActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".tools.planner.PlannerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TabsActivity"
+            android:name=".tools.tabs.TabsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TextToSpeechActivity"
+            android:name=".account.PasswordReset"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".account.RegisterActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".tools.communication.TextToSpeechActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:launchMode="singleInstance"
@@ -62,14 +77,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SpeechToTextActivity"
+            android:name=".tools.communication.SpeechToTextActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Mouse1Activity"
+            android:name=".tools.mouse.Mouse1Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

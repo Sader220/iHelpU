@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpeechToTextActivity"
+    tools:context=".tools.communication.SpeechToTextActivity"
     android:theme="@style/background" >
     <include layout="@layout/toolbar"></include>
 
@@ -30,7 +30,7 @@
         android:layout_height="90dp"
         android:background="@drawable/circle_buttons"
         android:backgroundTint="@color/blue"
-        android:text="Wyczyść"
+        android:text="@string/clear"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
