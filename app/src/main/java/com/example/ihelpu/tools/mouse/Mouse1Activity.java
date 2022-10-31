@@ -46,7 +46,7 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mouse1);
 
-        //Wyświetlnie przesunięcia
+        //Wyświetlnie tesktu przesunięcia
         showX = findViewById(R.id.showx);
         showY = findViewById(R.id.showy);
         showClick = findViewById(R.id.showClick);
@@ -63,8 +63,8 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
         addTouchListener();
     }
 
+
     private void showDraw(){
-        showClick.setText("0");
         if (bitmap == null){
             bitmap = Bitmap.createBitmap(touchDetect.getWidth(),touchDetect.getHeight(),Bitmap.Config.ARGB_8888);
 
@@ -83,8 +83,6 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
 
     @SuppressLint("ClickableViewAccessibility")
     public void addTouchListener(){
-        showClick.setText("0");
-
         touchDetect = findViewById(R.id.touchDetect);
         touchDetect.setOnTouchListener(new View.OnTouchListener() {
             final GestureDetector gestureDetector = new GestureDetector(getApplicationContext(), new GestureDetector.SimpleOnGestureListener(){
@@ -92,13 +90,22 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
 
                 public boolean onDoubleTap(@NonNull MotionEvent e) {
                     showClick.setText("2");
+                    sendMouse();
                     return super.onDoubleTap(e);
                 }
 
                 @Override
                 public boolean onSingleTapConfirmed(@NonNull MotionEvent e) {
                     showClick.setText("1");
+                    sendMouse();
                     return super.onSingleTapUp(e);
+                }
+
+                @Override
+                public void onLongPress(@NonNull MotionEvent e) {
+                    showClick.setText("1");
+                    sendMouse();
+                    super.onLongPress(e);
                 }
             });
 
@@ -115,8 +122,8 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
                    return false;
                 }
 
-               gestureDetector.onTouchEvent(event);
 
+                gestureDetector.onTouchEvent(event);
                 switch (action) {
                     case MotionEvent.ACTION_DOWN:
                         if (mVelocityTracker == null) {
@@ -129,9 +136,9 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
                         break;
                     case MotionEvent.ACTION_MOVE:
                         mVelocityTracker.addMovement(event);
-                        xPos = (int) mVelocityTracker.getXVelocity(pointerId)*3;
-                        yPos = (int) mVelocityTracker.getYVelocity(pointerId)*3;
-                        mVelocityTracker.computeCurrentVelocity(2);
+                        xPos = (int) mVelocityTracker.getXVelocity(pointerId)/20;
+                        yPos = (int) mVelocityTracker.getYVelocity(pointerId)/20;
+                        mVelocityTracker.computeCurrentVelocity(100);
 
                         xEnd =event.getX();
                         yEnd =event.getY();
@@ -156,19 +163,20 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
                         showX.setText(x2);
                         showY.setText(y2);
 
+
+
                         break;
 
                     case MotionEvent.ACTION_UP:
                         bitmap.recycle();
                         bitmap = null;
                         touchDetect.setImageBitmap(null);
-
+                        showClick.setText("0");
                         break;
 
                     case MotionEvent.ACTION_CANCEL:
                         mVelocityTracker.clear();
                         mVelocityTracker.recycle();
-
                         return true;
                 }
                 return true;
@@ -195,11 +203,8 @@ public class Mouse1Activity extends AppCompatActivity implements View.OnClickLis
     public void sendMouse(){
         String data = showX.getText().toString() + "|" + showY.getText().toString() + "|" +showClick.getText().toString();
 
-        if (showClick.getText().toString() != "0") {
-            showClick.setText("0");
-        }
 
-//        RegisterMouse registerMouse = new RegisterMouse();
-//        registerMouse.execute(data);
+        RegisterMouse registerMouse = new RegisterMouse();
+        registerMouse.execute(data);
     }
 }
